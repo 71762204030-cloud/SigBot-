@@ -17,7 +17,8 @@ import json
 
 # ---------------- CONFIG ----------------
 LOGO_CANDIDATES = [
-    "cit_logo.png",                       # preferred app working dir      # your Windows path (fallback)
+    "cit_logo.png",                       # preferred app working dir
+        # your Windows path (fallback)
 ]
 BACKEND_FILE = "oc3.py"
 ALLOWED_DOMAIN = "@cit.edu.in"
@@ -185,8 +186,8 @@ with st.sidebar:
     st.markdown("<h3>Login</h3>", unsafe_allow_html=True)
     st.markdown(f'<div class="sidebar-helper">Only email addresses ending with <b>{ALLOWED_DOMAIN}</b> are allowed.</div>', unsafe_allow_html=True)
 
-    # email input
-    email_input = st.text_input("Email", value=st.session_state.user_email, placeholder=f"yourname{ALLOWED_DOMAIN}", key="sidebar_email")
+    # email input (key changed to avoid duplicate-element error)
+    email_input = st.text_input("Email", value=st.session_state.user_email, placeholder=f"yourname{ALLOWED_DOMAIN}", key="sidebar_email_input")
 
     # sign in / logout
     st.markdown('<div class="sidebar-buttons">', unsafe_allow_html=True)
@@ -349,4 +350,3 @@ with right_col:
             active_chat["title"] = (t[:40] + "...") if len(t) > 40 else t
 
         st.rerun()
-
