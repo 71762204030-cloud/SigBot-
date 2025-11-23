@@ -1,7 +1,7 @@
 """
 oc3.py  -- SIGBOT backend (FAISS retrieval + Ollama)
 - Ollama-only (no OpenAI fallback)
-- Default model: gemma:2b (small enough for low-RAM machines)
+- Default model: gemma:2b (suitable for low-RAM)
 - Exposes load_index_and_metadata() used by the frontend
 - Provides chatbot_response(question, index, metadata, embedding_model, mode, teach_mode)
 """
@@ -15,7 +15,7 @@ import time
 import re
 from typing import Optional, Tuple
 
-# optional: sentence-transformers may be heavy; if not needed, you can stub it.
+# optional: sentence-transformers may be heavy; if not installed, the code will raise when needed.
 try:
     from sentence_transformers import SentenceTransformer
 except Exception:
