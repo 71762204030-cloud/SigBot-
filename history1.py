@@ -17,8 +17,7 @@ import json
 
 # ---------------- CONFIG ----------------
 LOGO_CANDIDATES = [
-    "/mnt/data/cit_logo.png",                       # preferred app working dir
-    r"D:\my_chatbot\sigbot\data\cit_logo.png",      # your Windows path (fallback)
+    "cit_logo.png",                       # preferred app working dir      # your Windows path (fallback)
 ]
 BACKEND_FILE = "oc3.py"
 ALLOWED_DOMAIN = "@cit.edu.in"
@@ -350,3 +349,4 @@ with right_col:
             active_chat["title"] = (t[:40] + "...") if len(t) > 40 else t
 
         st.rerun()
+
